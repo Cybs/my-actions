@@ -1,0 +1,18 @@
+name: 'LeanCloud Self Wake'
+# 触发条件
+on:
+  push:
+  watch:
+    types: [started]
+  schedule:
+    # 每隔10分钟
+    - cron: "*/25 * * * *"
+
+jobs:
+  curl-my-site:
+     runs-on: ubuntu-latest
+     steps:
+       - name: 'xecute command'
+         # 向站点发送 GET 请求
+         run: |                                   
+           curl cybs-api.avosapps.us
